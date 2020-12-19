@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DietApp.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <RelativeLayout Margin="20">
+                    <BoxView Color="Silver"
+                 RelativeLayout.XConstraint="0"
+                 RelativeLayout.YConstraint="10"
+                 RelativeLayout.WidthConstraint="200"
+                 RelativeLayout.HeightConstraint="5" />
+                    <BoxView Color="Silver"
+                 RelativeLayout.XConstraint="0"
+                 RelativeLayout.YConstraint="20"
+                 RelativeLayout.WidthConstraint="200"
+                 RelativeLayout.HeightConstraint="5" />
+                    <BoxView Color="Silver"
+                 RelativeLayout.XConstraint="10"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="5"
+                 RelativeLayout.HeightConstraint="65" />
+                    <BoxView Color="Silver"
+                 RelativeLayout.XConstraint="20"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="5"
+                 RelativeLayout.HeightConstraint="65" />
+                    <Label Text="DietApp"
+               FontSize="24"
+               RelativeLayout.XConstraint="30"
+               RelativeLayout.YConstraint="25" />
+                    <Image Source="fruits.png"
+                 HeightRequest="64"
+                 RelativeLayout.XConstraint="30"
+                 RelativeLayout.YConstraint="55"              />
+                </RelativeLayout>
+            </StackLayout>
+            <Button VerticalOptions="CenterAndExpand" Text="Login" Command="{Binding LoginCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
