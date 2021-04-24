@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DietApp.Views.CalculatorPage"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20,0">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <RelativeLayout Margin="20">
+                    <BoxView Color="Silver"
+                 RelativeLayout.XConstraint="0"
+                 RelativeLayout.YConstraint="10"
+                 RelativeLayout.WidthConstraint="200"
+                 RelativeLayout.HeightConstraint="5" />
+                    <BoxView Color="Silver"
+                 RelativeLayout.XConstraint="0"
+                 RelativeLayout.YConstraint="20"
+                 RelativeLayout.WidthConstraint="200"
+                 RelativeLayout.HeightConstraint="5" />
+                    <BoxView Color="Silver"
+                 RelativeLayout.XConstraint="10"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="5"
+                 RelativeLayout.HeightConstraint="65" />
+                    <BoxView Color="Silver"
+                 RelativeLayout.XConstraint="20"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="5"
+                 RelativeLayout.HeightConstraint="65" />
+                    <Label Text="DietApp"
+               FontSize="24"
+               RelativeLayout.XConstraint="30"
+               RelativeLayout.YConstraint="25" />
+
+                </RelativeLayout>
+            </StackLayout>
+            <Label Text="Płeć" VerticalOptions="Start" FontSize="Large"/>
+            <Picker x:Name="plecPicker" HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>K</x:String>
+                    <x:String>M</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Podaj Swój Wzrost [cm]" Margin="0,30,0,0" />
+            <Entry x:Name="wzrostEntry" Placeholder="wzrost [cm]" Text="{Binding WzrostText}" />
+            <Label Text="Podaj Swoją Wagę [kg]" Margin="0,30,0,0" />
+            <Entry x:Name="wagaEntry" Placeholder="waga [kg]" Text="{Binding WagaText}" />
+            <Label x:Name="wynikLabel" Text="{Binding WynikText}" Margin="0,20,0,0" TextColor="#000000" FontSize="18" />
+
+
+            <!--<Editor Text="Zakresy wartości BMI:
+
+            mniej niż 16 - wygłodzenie
+            16 - 16.99 - wychudzenie
+            17 - 18.49 - niedowaga
+            18.5 - 24.99 - wartość prawidłowa
+            25 - 29.99 - nadwaga
+            30 - 34.99 - I stopień otyłości
+            35 - 39.99 - II stopień otyłości
+            powyżej 40 - otyłość skrajna" 
+             />-->
+            <Button VerticalOptions="CenterAndExpand" Text="Oblicz" Command="{Binding CalcCommand}"/>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
