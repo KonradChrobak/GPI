@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DietApp": {
+      "commandName": "Executable",
+      "executablePath": "C:\\github\\GPI\\DietApp\\DietApp.Android\\bin\\Debug\\DietApp.dll"
+    }
+  }
+}
