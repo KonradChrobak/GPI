@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DietApp.Views.SettingsPage"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+
+            <StackLayout  VerticalOptions="Center">
+                <Label x:Name="sexLabel" Text="Płeć" LineHeight="0" Margin="0,2,0,0" />
+                <Switch IsToggled="{Binding UserSex}"></Switch>
+            </StackLayout>
+
+            <StackLayout  VerticalOptions="Center">
+                <Picker x:Name="SexPicker"
+        Title="Wybierz Plec"
+        TitleColor="Black">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>M</x:String>
+                            <x:String>K</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+
+
+            <StackLayout  VerticalOptions="Center">
+                <Picker x:Name="PlanPicker"
+        Title="Wybierz Plan zywieniowy"
+        TitleColor="Black">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Redukcja</x:String>
+                            <x:String>Masa</x:String>
+                            <x:String>Zdrowo</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+  
+
+</ContentPage>
