@@ -81,10 +81,9 @@
     -->
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="About" Icon="tab_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Browse" Icon="tab_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
         <ShellContent Title="Kalkulator BMI" Icon="waga_tab.png" ContentTemplate="{DataTemplate local:CalculatorPage}" />
-        <ShellContent Title="Baza" Icon="waga_tab.png" ContentTemplate="{DataTemplate local:ProductsPage}" />
-        <ShellContent Title="News" Icon="waga_tab.png" ContentTemplate="{DataTemplate local:NewsPage}" />
+        <ShellContent Title="Baza" Icon="fruits.png" ContentTemplate="{DataTemplate local:ProductsPage}" />
+        <ShellContent Title="News" Icon="tab_feed.png" ContentTemplate="{DataTemplate local:NewsPage}" />
     </FlyoutItem>
 
 

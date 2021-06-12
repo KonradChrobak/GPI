@@ -9,6 +9,7 @@ using DietApp.Models;
 using DietApp.Views;
 using DietApp.Services;
 using Xamarin.CommunityToolkit.ObjectModel;
+using Xamarin.Essentials;
 
 namespace DietApp.ViewModels
 {
@@ -28,6 +29,7 @@ namespace DietApp.ViewModels
             RefreshCommand = new AsyncCommand(Refresh);
             AddCommand = new AsyncCommand(Add);
             RemoveCommand = new AsyncCommand<Product>(Remove);
+            BMI = Preferences.Get("bmiPreferences", "0");
         }
         async Task Add()
         {
@@ -36,7 +38,7 @@ namespace DietApp.ViewModels
             int carbohydrates = int.Parse(await App.Current.MainPage.DisplayPromptAsync("Carbohydrates", "Amount of Carbohydrates(100g)"));
             int fats = int.Parse(await App.Current.MainPage.DisplayPromptAsync("Fats", "Amount of Fats(100g)"));
             int proteins = int.Parse(await App.Current.MainPage.DisplayPromptAsync("Proteins", "Amount of Proteins(100g)"));
-            await ProductsService.AddItem(name, calories, fats,carbohydrates,proteins);
+            await ProductsService.AddItem(name, calories, fats, carbohydrates, proteins);
             
         }
         async Task Remove(Product product)

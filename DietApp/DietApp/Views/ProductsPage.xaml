@@ -4,7 +4,7 @@
              x:Class="DietApp.Views.ProductsPage"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:DietApp.ViewModels"  
-             xmlns:model="clr-namespace:DietApp.Models"  
+             xmlns:model="clr-namespace:DietApp.Models" x:DataType="local:ProductsViewModel"
              x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
@@ -14,50 +14,57 @@
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
     -->
-    <RefreshView x:DataType="local:ProductsViewModel" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-        <CollectionView x:Name="ItemsListView"
+    <StackLayout>
+        <RefreshView x:DataType="local:ProductsViewModel" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <CollectionView x:Name="ItemsListView"
                 ItemsSource="{Binding Product}"
                 SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Product">
-                        <Label Text="{Binding Name}" 
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" x:DataType="model:Product">
+                            <Label Text="{Binding Name}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="16" 
                             TextColor="Black"/>
-                        <StackLayout Padding="10" x:DataType="model:Product" Orientation="Horizontal">
-                            <Label Text="{Binding Calories, StringFormat='{0:F0} kcal'}" 
+                            <StackLayout Padding="10" x:DataType="model:Product" Orientation="Horizontal">
+                                <Label Text="{Binding Calories, StringFormat='{0:F0} kcal'}" 
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" 
                             TextColor="Black"/>
-                        <Label Text="{Binding Fats, StringFormat='F: {0:F0} g'}"
+                                <Label Text="{Binding Fats, StringFormat='F: {0:F0} g'}"
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" 
                             TextColor="Black"/>
-                        <Label Text="{Binding Carbohydrates, StringFormat='C: {0:F0} g'}" 
+                                <Label Text="{Binding Carbohydrates, StringFormat='C: {0:F0} g'}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="13" 
                             TextColor="Black"/>
-                        <Label Text="{Binding Proteins, StringFormat='P: {0:F0} g'}" 
+                                <Label Text="{Binding Proteins, StringFormat='P: {0:F0} g'}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="13" 
                             TextColor="Black"/>
-                        </StackLayout>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer 
+                            </StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
                                 CommandParameter="{Binding .}">
-                            </TapGestureRecognizer>
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </RefreshView>
+                                </TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+        <Label Text="{Binding BMI, StringFormat='Your daily goal is {0:F0} kcal'}" 
+                            LineBreakMode="NoWrap" 
+                            FontSize="16" 
+                            TextColor="Black"
+                            x:Name="BMILabel"/>
+    </StackLayout>
 </ContentPage>

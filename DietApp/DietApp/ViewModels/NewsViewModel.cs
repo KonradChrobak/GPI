@@ -22,8 +22,6 @@ namespace DietApp.ViewModels
         readonly IList<NewsItem> source;
 
         public ObservableCollection<NewsItem> NewsItems { get; private set; }
-
-
         private string _NewsFeedBox;
         public string NewsFeedBox
         {
@@ -34,8 +32,6 @@ namespace DietApp.ViewModels
                 OnPropertyChanged(nameof(NewsFeedBox)); // Notify that there was a change on this property
             }
         }
-
-        
         //private const string RSS_link = "https://news.google.com/rss/search?q=zdrowe%20jedzenie&hl=pl&gl=PL&ceid=PL%3Apl";
         private const string RSS_link = "https://www.runtastic.com/blog/en/tag/recipes/feed/";
         private const string RSS_to_json = "https://api.rss2json.com/v1/api.json?rss_url=";
@@ -65,8 +61,6 @@ namespace DietApp.ViewModels
 
             NewsRssObject json_rss = JsonConvert.DeserializeObject<NewsRssObject>(xmlStr);
             
-
-           
             foreach (var newsitem in json_rss.items)
             {
                 source.Add(new NewsItem
