@@ -61,10 +61,15 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </RefreshView>
-        <Label Text="{Binding BMI, StringFormat='Your daily goal is {0:F0} kcal'}" 
+        <Label Padding="10" Text="{Binding bmiPreferences, StringFormat='Your daily goal is {0:F0} kcal'}" 
                             LineBreakMode="NoWrap" 
                             FontSize="16" 
                             TextColor="Black"
                             x:Name="BMILabel"/>
+        <Label Padding="10" Text="{Binding kcal_sum, StringFormat='Today you consumed {0:F0} kcal'}" 
+                            LineBreakMode="NoWrap" 
+                            FontSize="16" 
+                            TextColor="Black"
+                            x:Name="kcal_sumLabel"/>
     </StackLayout>
 </ContentPage>

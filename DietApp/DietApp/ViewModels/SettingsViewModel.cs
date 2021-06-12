@@ -11,6 +11,23 @@ namespace DietApp.ViewModels
     {
         public Command LoginCommand { get; }
 
+        public string bmiPreferences
+        {
+            get => Preferences.Get(nameof(bmiPreferences),"0");
+
+            set
+            {
+                Preferences.Set(nameof(bmiPreferences), value);
+                OnPropertyChanged(nameof(bmiPreferences));
+            }
+        }
+
+        
+
+
+
+
+
         public SettingsViewModel()
         {
             LoginCommand = new Command(OnLoginClicked);
@@ -88,8 +105,8 @@ namespace DietApp.ViewModels
             };
 
             BMI = BMIcalculated.ToString();
-
             Preferences.Set("bmiPreferences", BMI);
+            bmiPreferences =  BMI;
         }
 
         private async void OnLoginClicked(object obj)
