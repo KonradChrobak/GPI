@@ -25,36 +25,17 @@
                 <ContentView Padding="0,5,0,5" VerticalOptions="FillAndExpand">
 <!--                  <Image Source="fruits.png" VerticalOptions="Start" HeightRequest="64" />
                         <Label Text="DietApp" VerticalOptions="End" FontSize="Title"/>
--->                    <RelativeLayout Margin="20">
-                        <BoxView Color="Silver"
-                 RelativeLayout.XConstraint="0"
-                 RelativeLayout.YConstraint="10"
-                 RelativeLayout.WidthConstraint="200"
-                 RelativeLayout.HeightConstraint="5" />
-                        <BoxView Color="Silver"
-                 RelativeLayout.XConstraint="0"
-                 RelativeLayout.YConstraint="20"
-                 RelativeLayout.WidthConstraint="200"
-                 RelativeLayout.HeightConstraint="5" />
-                        <BoxView Color="Silver"
-                 RelativeLayout.XConstraint="10"
-                 RelativeLayout.YConstraint="0"
-                 RelativeLayout.WidthConstraint="5"
-                 RelativeLayout.HeightConstraint="65" />
-                        <BoxView Color="Silver"
-                 RelativeLayout.XConstraint="20"
-                 RelativeLayout.YConstraint="0"
-                 RelativeLayout.WidthConstraint="5"
-                 RelativeLayout.HeightConstraint="65" />
-                        <Label Text="DietApp"
-               FontSize="24"
-               RelativeLayout.XConstraint="30"
-               RelativeLayout.YConstraint="25" />
-                        <Image Source="fruits.png"
-                 HeightRequest="64"
+-->                    
+                        
+                        
+                        
+                        
+                        
+                        <Image
+                 HeightRequest="100"
                  RelativeLayout.XConstraint="30"
-                 RelativeLayout.YConstraint="55"              />
-                    </RelativeLayout>
+                 RelativeLayout.YConstraint="55" Source="dietapp_logo.png" Margin="0,20"              />
+                    
                 </ContentView>
             </StackLayout>
         </StackLayout>
