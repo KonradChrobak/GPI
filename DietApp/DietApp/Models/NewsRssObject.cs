@@ -33,6 +33,6 @@ namespace DietApp.Models
     {
         public string status { get; set; }
         public Feed feed { get; set; }
-        public List<Item> items { get; set; }
+        public List<NewsItem> items { get; set; }
     }
 }
