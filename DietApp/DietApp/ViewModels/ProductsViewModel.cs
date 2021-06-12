@@ -75,7 +75,7 @@ namespace DietApp.ViewModels
         }
         async Task Remove(Product product)
         {
-            await ProductsService.RemoveItem(product.Id);
+            await ProductsService.RemoveItem();
             await Refresh();
         }
         async Task Refresh()

@@ -18,8 +18,9 @@
 
             <StackLayout  VerticalOptions="Center">
                 <Picker x:Name="SexPicker"
-        Title="Wybierz Plec"
-        TitleColor="Black">
+        Title="Choose your sex"
+        TitleColor="Black"
+                        SelectedItem="{Binding SexValue}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>M</x:String>
@@ -30,21 +31,22 @@
             </StackLayout>
 
             <StackLayout  VerticalOptions="Center">
-                <Entry Text="" Placeholder = "Age" x:Name="AgeEdit" x:DataType="x:Int32" Keyboard="Numeric"/>
+                <Entry Text="{Binding AgeValue}" Placeholder = "Age" x:Name="AgeEdit" Keyboard="Numeric"/>
             </StackLayout>
 
             <StackLayout  VerticalOptions="Center">
-                <Entry Text="" Placeholder = "Weight kgs" x:Name="WeightEdit" x:DataType="x:Int32" Keyboard="Numeric"/>
+                <Entry Text="{Binding WeightValue}" Placeholder = "Weight kgs" x:Name="WeightEdit" Keyboard="Numeric"/>
             </StackLayout>
 
             <StackLayout  VerticalOptions="Center">
-                <Entry Text="" Placeholder = "Height cms" x:Name="HeightEdit" x:DataType="x:Int32" Keyboard="Numeric"/>
+                <Entry Text="{Binding HeightValue}" Placeholder = "Height cms" x:Name="HeightEdit" Keyboard="Numeric"/>
             </StackLayout>
 
             <StackLayout  VerticalOptions="Center">
                 <Picker x:Name="PlanPicker"
         Title="Wybierz Plan zywieniowy"
-        TitleColor="Black">
+        TitleColor="Black"
+                        SelectedItem="{Binding PlanValue}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Redukcja</x:String>
@@ -58,7 +60,8 @@
             <StackLayout  VerticalOptions="Center">
                 <Picker x:Name="ActivityPicker"
         Title="Choose your activity level"
-        TitleColor="Black">
+        TitleColor="Black"
+                        SelectedItem="{Binding ActivityValue}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Sedentary - Little or no exercise</x:String>
@@ -72,7 +75,7 @@
             </StackLayout>
 
 
-            <Button Margin="0,10,10,0" Text="Save"
+            <Button Margin="0,10,0,10" Text="Save"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" 
                         Clicked="SaveButton_OnClicked"/>

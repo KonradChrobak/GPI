@@ -9,6 +9,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddCommand}" />
+        <ToolbarItem Text="Delete" Command="{Binding RemoveCommand}" />
     </ContentPage.ToolbarItems>
     <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
@@ -16,11 +17,17 @@
     -->
     <StackLayout>
         <RefreshView x:DataType="local:ProductsViewModel" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <CollectionView x:Name="ItemsListView"
+        <CollectionView x:Name="ItemsListView"
                 ItemsSource="{Binding Product}"
                 SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItem Text="X"
+                                           BackgroundColor="Red"
+                                           Command="{Binding RemoveCommand}"/>
+                        </SwipeView.RightItems>
                         <StackLayout Padding="10" x:DataType="model:Product">
                             <Label Text="{Binding Name}" 
                             LineBreakMode="NoWrap" 
@@ -28,40 +35,34 @@
                             FontSize="16" 
                             TextColor="Black"/>
                             <StackLayout Padding="10" x:DataType="model:Product" Orientation="Horizontal">
-                                <Label Text="{Binding Calories, StringFormat='{0:F0} kcal'}" 
+                                <Label Text="{Binding Calories, StringFormat='{0:F2} kcal'}" 
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" 
                             TextColor="Black"/>
-                                <Label Text="{Binding Fats, StringFormat='F: {0:F0} g'}"
+                                <Label Text="{Binding Fats, StringFormat='F: {0:F2} g'}"
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" 
                             TextColor="Black"/>
-                                <Label Text="{Binding Carbohydrates, StringFormat='C: {0:F0} g'}" 
+                                <Label Text="{Binding Carbohydrates, StringFormat='C: {0:F2} g'}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="13" 
                             TextColor="Black"/>
-                                <Label Text="{Binding Proteins, StringFormat='P: {0:F0} g'}" 
+                                <Label Text="{Binding Proteins, StringFormat='P: {0:F2} g'}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="13" 
                             TextColor="Black"/>
                             </StackLayout>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer 
-                                NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
-                                CommandParameter="{Binding .}">
-                                </TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
                         </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </RefreshView>
-        <Label Padding="10" Text="{Binding bmiPreferences, StringFormat='Your daily goal is {0:F0} kcal'}" 
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+    <Label Padding="10" Text="{Binding bmiPreferences, StringFormat='Your daily goal is {0:F0} kcal'}" 
                             LineBreakMode="NoWrap" 
                             FontSize="16" 
                             TextColor="Black"

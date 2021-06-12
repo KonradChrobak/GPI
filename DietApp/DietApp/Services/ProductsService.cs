@@ -37,10 +37,12 @@ namespace DietApp.Services
             };
             var id = await db.InsertAsync(product);
         }
-        public static async Task RemoveItem(int id)
+        public static async Task RemoveItem()
         {
             await Init();
-            await db.DeleteAsync<Product>(id);
+            //            await db.DeleteAsync(product); 
+            await db.DropTableAsync<Product>();
+            await db.CreateTableAsync<Product>();
         }
         public static async Task<IEnumerable<Product>> GetItem()
         {
