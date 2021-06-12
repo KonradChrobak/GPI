@@ -14,21 +14,21 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20,0">
+        <StackLayout BackgroundColor="#c7e6ff" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20,0">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <Image HeightRequest="100"  RelativeLayout.YConstraint="55" Source="dietapp_logo.png" Margin="0,20"              />
             </StackLayout>
-            <Label Text="Płeć" VerticalOptions="Start" FontSize="Large"/>
+            <Label Text="Your Sex" VerticalOptions="Start" FontSize="Large"/>
             <Picker x:Name="plecPicker" HorizontalOptions="FillAndExpand">
                 <Picker.Items>
                     <x:String>K</x:String>
                     <x:String>M</x:String>
                 </Picker.Items>
             </Picker>
-            <Label Text="Podaj Swój Wzrost [cm]" Margin="0,30,0,0" />
-            <Entry x:Name="wzrostEntry" Placeholder="wzrost [cm]" Text="{Binding WzrostText}" />
-            <Label Text="Podaj Swoją Wagę [kg]" Margin="0,30,0,0" />
-            <Entry x:Name="wagaEntry" Placeholder="waga [kg]" Text="{Binding WagaText}" />
+            <Label Text="Yoyr Height [cm]" Margin="0,30,0,0" />
+            <Entry x:Name="wzrostEntry" Placeholder="Height [cm]" Text="{Binding WzrostText}" />
+            <Label Text="Your Weight [kg]" Margin="0,30,0,0" />
+            <Entry x:Name="wagaEntry" Placeholder="Weight [kg]" Text="{Binding WagaText}" />
             <Label x:Name="wynikLabel" Text="{Binding WynikText}" Margin="0,20,0,0" TextColor="#000000" FontSize="18" />
 
 
@@ -43,7 +43,7 @@
             35 - 39.99 - II stopień otyłości
             powyżej 40 - otyłość skrajna" 
              />-->
-            <Button VerticalOptions="CenterAndExpand" Text="Oblicz" Command="{Binding CalcCommand}"/>
+            <Button VerticalOptions="CenterAndExpand" Text="Calculate Your BMI" Command="{Binding CalcCommand}"/>
             
             
         </StackLayout>

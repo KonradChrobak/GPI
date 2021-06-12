@@ -33,7 +33,8 @@ namespace DietApp.ViewModels
             }
         }
         //private const string RSS_link = "https://news.google.com/rss/search?q=zdrowe%20jedzenie&hl=pl&gl=PL&ceid=PL%3Apl";
-        private const string RSS_link = "https://www.runtastic.com/blog/en/tag/recipes/feed/";
+        //private const string RSS_link = "https://www.runtastic.com/blog/en/tag/recipes/feed/";
+        private const string RSS_link = "https://www.runtastic.com/blog/en/feed/";
         private const string RSS_to_json = "https://api.rss2json.com/v1/api.json?rss_url=";
 
         NewsRssObject rssObject;

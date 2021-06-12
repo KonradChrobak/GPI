@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using DietApp.Models;
 using DietApp.Views;
 
+
 namespace DietApp.ViewModels
 {
     public class ItemsViewModel : BaseViewModel

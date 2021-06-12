@@ -80,9 +80,9 @@
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="About" Icon="tab_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Kalkulator BMI" Icon="waga_tab.png" ContentTemplate="{DataTemplate local:CalculatorPage}" />
-        <ShellContent Title="Baza" Icon="fruits.png" ContentTemplate="{DataTemplate local:ProductsPage}" />
+        <ShellContent Title="Home" Icon="tab_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="BMI Calculator" Icon="waga_tab.png" ContentTemplate="{DataTemplate local:CalculatorPage}" />
+        <ShellContent Title="Today" Icon="fruits.png" ContentTemplate="{DataTemplate local:ProductsPage}" />
         <ShellContent Title="News" Icon="tab_feed.png" ContentTemplate="{DataTemplate local:NewsPage}" />
     </FlyoutItem>
 
